@@ -41,7 +41,7 @@ public class PlayerMovements : MonoBehaviour
 
             Vector3 move = new Vector3(x, 0, z);
 
-            rb.linearvelocity = move * speed;
+            rb.velocity = move * speed;
         }
 
         if (isInteractable) 
