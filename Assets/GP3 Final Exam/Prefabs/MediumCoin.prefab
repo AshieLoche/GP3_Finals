@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7393577026346109825}
   - component: {fileID: 9142196075657477346}
   - component: {fileID: 627798157896164557}
+  - component: {fileID: 8379134773440121870}
   - component: {fileID: -604045151140466986}
   m_Layer: 0
   m_Name: MediumCoin
@@ -60,9 +61,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -109,6 +107,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8379134773440121870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903948219969428129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78101bf82c207ce4eb6936bd2db2bdd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _points: 5
 --- !u!114 &-604045151140466986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,4 +132,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bac39076d2a0574cab8e6e146cb13fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  givePoints: 5
