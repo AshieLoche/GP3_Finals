@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class MaxCoinPool : ObjectPool
 {
     public static MaxCoinPool Instance;

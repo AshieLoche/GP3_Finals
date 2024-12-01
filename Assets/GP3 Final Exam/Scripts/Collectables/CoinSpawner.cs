@@ -6,8 +6,8 @@ public class CoinSpawner : MonoBehaviour
 
     [SerializeField] private int _coinAmount;
     [SerializeField] private int _coinReserveAmount;
-    public int CoinAmount {  get { return _coinAmount; } }
-    public int CoinReserveAmount {  get { return _coinReserveAmount; } }
+    public int CoinAmount { get { return _coinAmount; } }
+    public int CoinReserveAmount { get { return _coinReserveAmount; } }
 
     private void Awake()
     {

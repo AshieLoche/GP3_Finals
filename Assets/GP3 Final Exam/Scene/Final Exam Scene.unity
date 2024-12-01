@@ -1593,28 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11674f01643ba54ca963548862c7b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  rb: {fileID: 417536489}
-  isInteractable: 0
-  interactable: {fileID: 0}
-  coins:
-  - {fileID: 1001623309738257904, guid: a4f686ec153d1e84e87ad2d7dd436e83, type: 3}
-  - {fileID: 1903948219969428129, guid: 34389fca547334249a8bd52c0393e76c, type: 3}
-  - {fileID: 6414708834204472061, guid: f159ca0463508f74896ae59fae1da7da, type: 3}
-  spawnNum: 50
-  points: 0
-  coinsCollected: 0
-  chestOpened: 0
-  randomX: {x: -46, y: 46}
-  randomZ: {x: -46, y: 46}
-  coinParent: {fileID: 687357564}
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
-  scorePointsText: {fileID: 423417825}
-  coinsText: {fileID: 1893604458}
-  chestText: {fileID: 2028114573}
-  winPanel: {fileID: 1288893419}
+  _speed: 10
 --- !u!114 &417536494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6132,7 +6111,7 @@ MonoBehaviour:
   _scorePointsText: {fileID: 423417825}
   _coinsText: {fileID: 1893604458}
   _chestText: {fileID: 2028114573}
-  __winPanel: {fileID: 1288893419}
+  _winPanel: {fileID: 0}
 --- !u!1 &1893604455
 GameObject:
   m_ObjectHideFlags: 0

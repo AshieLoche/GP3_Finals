@@ -12,9 +12,12 @@ public abstract class ObjectPool : MonoBehaviour
 
     [SerializeField] private LayerMask _mask;
 
+    private Collider[] _colliders;
     private readonly List<GameObject> _objPool = new();
     private readonly List<GameObject> _objPoolReserve = new();
     private GameObject _objClone;
+    private Vector3 _newPos;
+    private bool _validPosition;
 
     protected abstract void Awake();
 
@@ -31,14 +34,14 @@ public abstract class ObjectPool : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100, _mask))
             {
-                Collider[] colliders = Physics.OverlapSphere(hit.point, 2);
+                _colliders = Physics.OverlapSphere(hit.point, 2);
 
-                bool validPosition = !colliders.Any(collider => !collider.CompareTag("Platform"));
+                _validPosition = !_colliders.Any(collider => !collider.CompareTag("Platform"));
 
-                if (validPosition)
+                if (_validPosition)
                 {
-                    Vector3 newPos = new Vector3(hit.point.x, 1, hit.point.z);
-                    SpawnObject(newPos, _objParent, $"{_objPrefab.name} {i}");
+                    _newPos = new Vector3(hit.point.x, 1, hit.point.z);
+                    SpawnObject(_newPos, _objParent, $"{_objPrefab.name} {i}");
                     i++;
                 }
             }
@@ -51,6 +54,16 @@ public abstract class ObjectPool : MonoBehaviour
         {
             SpawnObject(Vector3.zero, _objReserveParent, $"{_objPrefab.name} Reserve {i}");
         }
+    }
+
+    public GameObject GetObject()
+    {
+        return _objPool.FirstOrDefault(obj => !obj.activeInHierarchy);
+    }
+
+    public GameObject GetReserveObject()
+    {
+        return _objPoolReserve.FirstOrDefault(obj => !obj.activeInHierarchy);
     }
 
     private void SpawnObject(Vector3 pos, Transform parent, string objName)
@@ -66,15 +79,5 @@ public abstract class ObjectPool : MonoBehaviour
         {
             _objPool.Add(_objClone);
         }
-    }
-
-    public GameObject GetObject()
-    {
-        return _objPool.FirstOrDefault(obj => !obj.activeInHierarchy);
-    }
-
-    public GameObject GetReserveObject()
-    {
-        return _objPoolReserve.FirstOrDefault(obj => !obj.activeInHierarchy);
     }
 }

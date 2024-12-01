@@ -7,7 +7,7 @@ public class Scoreboard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scorePointsText;
     [SerializeField] private TextMeshProUGUI _coinsText;
     [SerializeField] private TextMeshProUGUI _chestText;
-    [SerializeField] private GameObject __winPanel;
+    [SerializeField] private GameObject _winPanel;
     private int _scoreGathered, _coinsCollected, _chestOpened, _totalCoins;
 
     public static UnityEvent OnWinEvent = new();
@@ -57,7 +57,7 @@ public class Scoreboard : MonoBehaviour
         if (_coinsCollected == _totalCoins)
         {
             OnWinEvent.Invoke();
-            __winPanel.SetActive(true);
+            _winPanel.SetActive(true);
         }
     }
 }

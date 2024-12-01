@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class MediumCoinPool : ObjectPool
 {
     public static MediumCoinPool Instance;

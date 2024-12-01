@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CoinActivation : MonoBehaviour
 {
+    public static CoinActivation Instance;
+
     private int _index;
     private GameObject _coin;
-
-    public static CoinActivation Instance;
 
     private void Awake()
     {
